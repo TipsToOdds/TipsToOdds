@@ -16,6 +16,159 @@
         rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+<style>
+/* =========================================
+   LANGUAGE SELECTOR FIX
+   ========================================= */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.language-selector {
+  position: relative;
+  display: inline-block;
+  z-index: 1000;
+}
+
+.language-button {
+  appearance: none;
+  -webkit-appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 104px;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 12px;
+  background: #071522;
+  color: #f5f7fa;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: .2s ease;
+}
+
+.language-button:hover,
+.language-selector.open .language-button {
+  background: #0b1e2d;
+  border-color: #35d0a1;
+}
+
+.language-arrow {
+  color: #35d0a1;
+  font-size: 17px;
+  line-height: 1;
+  transition: transform .2s ease;
+}
+
+.language-selector.open .language-arrow {
+  transform: rotate(180deg);
+}
+
+/* Hidden by default; shown only when JS adds .open */
+.language-menu {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  right: 0 !important;
+  left: auto !important;
+
+  display: none !important;
+  width: 190px !important;
+  min-width: 190px !important;
+  padding: 7px !important;
+
+  background: #071522 !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 18px 45px rgba(0,0,0,.45) !important;
+  backdrop-filter: blur(12px);
+
+  overflow: hidden !important;
+}
+
+.language-selector.open .language-menu {
+  display: block !important;
+}
+
+.language-menu button {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 42px !important;
+  margin: 0 !important;
+  padding: 9px 11px !important;
+
+  border: 0 !important;
+  border-radius: 9px !important;
+  background: transparent !important;
+  color: #f5f7fa !important;
+
+  font: inherit !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+
+  cursor: pointer !important;
+  box-shadow: none !important;
+}
+
+.language-menu button:hover {
+  background: rgba(53,208,161,.13) !important;
+  color: #35d0a1 !important;
+}
+
+/* Header Telegram button */
+.header-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 46px;
+  padding: 0 22px;
+  white-space: nowrap;
+}
+
+/* Prevent the menu from affecting header layout */
+.language-menu button::before,
+.language-menu button::after {
+  display: none !important;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .header-actions {
+    gap: 8px;
+  }
+
+  .language-button {
+    min-width: 88px;
+    height: 42px;
+    padding: 0 11px;
+    font-size: 14px;
+  }
+
+  .header-button {
+    min-height: 42px;
+    padding: 0 14px;
+  }
+
+  .language-menu {
+    right: 0 !important;
+    width: 180px !important;
+    min-width: 180px !important;
+  }
+}
+</style>
+
 </head>
 
 <body>

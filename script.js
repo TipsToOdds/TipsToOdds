@@ -1,5 +1,6 @@
 const TELEGRAM_URL = "https://t.me/TipsToOdds";
 
+
 const translations = {
 
   en: {
@@ -237,12 +238,10 @@ const translations = {
 
     explore:"اكتشف المزيد",
 
-    followers:"متابع",
-
+    followers:"متابعون",
     updated:"تحديثات",
 
     daily:"يومياً",
-
     content:"محتوى جديد",
 
     sportsLabel:"الرياضات",
@@ -348,11 +347,9 @@ const translations = {
     explore:"Explorar",
 
     followers:"Seguidores",
-
     updated:"Atualizações",
 
     daily:"Diário",
-
     content:"Novo conteúdo",
 
     sportsLabel:"ESPORTES",
@@ -438,11 +435,14 @@ const translations = {
 };
 
 
+/* COUNTRY GROUPS */
+
 const englishCountries = new Set([
-  "US","GB","AU","NZ","IE","ZA","JM","TT","BB","BS","BZ",
-  "GY","AG","DM","GD","KN","LC","VC","FJ","PG","SB","VU",
-  "WS","TO","FM","MH","PW","NR","KI","UG","KE","TZ","ZM",
-  "ZW","GH","NG","SL","LR","GM","MT","SG","PH"
+  "US","GB","AU","NZ","IE","ZA","JM","TT","BB","BS",
+  "BZ","GY","AG","DM","GD","KN","LC","VC","FJ","PG",
+  "SB","VU","WS","TO","FM","MH","PW","NR","KI","UG",
+  "KE","TZ","ZM","ZW","GH","NG","SL","LR","GM","MT",
+  "SG","PH"
 ]);
 
 
@@ -465,6 +465,8 @@ const portugueseCountries = new Set([
 ]);
 
 
+/* BROWSER LANGUAGE */
+
 function languageFromLocale(locale){
 
   const value =
@@ -486,21 +488,15 @@ function languageFromLocale(locale){
 }
 
 
+/* COUNTRY LANGUAGE */
+
 function languageFromCountry(country,locale){
 
   const c =
     (country || "").toUpperCase();
 
-  const browserLang =
+  const browserLanguage =
     languageFromLocale(locale);
-
-
-  if(
-    ["CA","BE","CH","LU"].includes(c) &&
-    ["fr","en"].includes(browserLang)
-  ){
-    return browserLang;
-  }
 
 
   if(englishCountries.has(c)){
@@ -523,45 +519,41 @@ function languageFromCountry(country,locale){
   }
 
 
-  return browserLang;
+  return browserLanguage;
 }
 
 
+/* APPLY LANGUAGE */
+
 function applyLanguage(lang){
 
-  const safeLang =
+  const safeLanguage =
     translations[lang]
       ? lang
       : "en";
 
 
   document.documentElement.lang =
-    safeLang;
+    safeLanguage;
 
 
   document.documentElement.dir =
-    safeLang === "ar"
+    safeLanguage === "ar"
       ? "rtl"
       : "ltr";
 
 
-  document.title =
-    "TipsToOdds";
-
-
   document
     .querySelectorAll("[data-i18n]")
-    .forEach(el => {
+    .forEach(element => {
 
       const key =
-        el.dataset.i18n;
+        element.dataset.i18n;
 
-      if(
-        translations[safeLang][key]
-      ){
+      if(translations[safeLanguage][key]){
 
-        el.textContent =
-          translations[safeLang][key];
+        element.textContent =
+          translations[safeLanguage][key];
 
       }
 
@@ -570,33 +562,146 @@ function applyLanguage(lang){
 
   document
     .querySelectorAll('a[href*="t.me/"]')
-    .forEach(a => {
+    .forEach(link => {
 
-      a.href =
+      link.href =
         TELEGRAM_URL;
 
     });
 
 
+  const currentLanguage =
+    document.getElementById("currentLanguage");
+
+
+  if(currentLanguage){
+
+    currentLanguage.textContent =
+      safeLanguage.toUpperCase();
+
+  }
+
+
   localStorage.setItem(
     "tipstoodds_language",
-    safeLang
+    safeLanguage
   );
 
 }
 
 
+/* LANGUAGE DROPDOWN */
+
+function setupLanguageSelector(){
+
+  const button =
+    document.getElementById(
+      "languageButton"
+    );
+
+  const menu =
+    document.getElementById(
+      "languageMenu"
+    );
+
+
+  if(!button || !menu){
+    return;
+  }
+
+
+  button.addEventListener(
+    "click",
+    function(event){
+
+      event.stopPropagation();
+
+      menu.classList.toggle(
+        "active"
+      );
+
+    }
+  );
+
+
+  menu
+    .querySelectorAll(
+      "[data-language]"
+    )
+    .forEach(languageButton => {
+
+      languageButton.addEventListener(
+        "click",
+        function(){
+
+          const language =
+            this.dataset.language;
+
+
+          applyLanguage(
+            language
+          );
+
+
+          menu.classList.remove(
+            "active"
+          );
+
+        }
+      );
+
+    });
+
+
+  document.addEventListener(
+    "click",
+    function(){
+
+      menu.classList.remove(
+        "active"
+      );
+
+    }
+  );
+
+}
+
+
+/* AUTOMATIC LANGUAGE DETECTION */
+
 async function detectLanguage(){
 
-  const saved =
+  const savedLanguage =
     localStorage.getItem(
       "tipstoodds_language"
     );
+
 
   const browserLocale =
     navigator.language ||
     "en-US";
 
+
+  /*
+    If the visitor has manually
+    selected a language before,
+    keep that language.
+  */
+
+  if(savedLanguage){
+
+    applyLanguage(
+      savedLanguage
+    );
+
+    return;
+
+  }
+
+
+  /*
+    Try to detect country automatically.
+  */
 
   try{
 
@@ -615,11 +720,15 @@ async function detectLanguage(){
         await response.json();
 
 
-      applyLanguage(
+      const language =
         languageFromCountry(
           data.country_code,
           browserLocale
-        )
+        );
+
+
+      applyLanguage(
+        language
       );
 
 
@@ -629,13 +738,18 @@ async function detectLanguage(){
 
   }catch(error){
 
-    // Browser language fallback
+    console.log(
+      "Automatic language detection failed."
+    );
 
   }
 
 
+  /*
+    Browser language fallback.
+  */
+
   applyLanguage(
-    saved ||
     languageFromLocale(
       browserLocale
     )
@@ -644,7 +758,15 @@ async function detectLanguage(){
 }
 
 
+/* START */
+
 document.addEventListener(
   "DOMContentLoaded",
-  detectLanguage
+  function(){
+
+    setupLanguageSelector();
+
+    detectLanguage();
+
+  }
 );

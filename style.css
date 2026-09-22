@@ -1,1 +1,1368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    background: #070b24;
+
+    color: #ffffff;
+
+    overflow-x: hidden;
+
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.container {
+
+    width: min(
+        1180px,
+        calc(100% - 40px)
+    );
+
+    margin: auto;
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 100;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+.header-inner {
+
+    width: min(
+        1400px,
+        calc(100% - 60px)
+    );
+
+    height: 76px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    letter-spacing: -.5px;
+
+}
+
+
+.logo strong {
+
+    color: #8b7cff;
+
+}
+
+
+.desktop-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+}
+
+
+.desktop-menu a {
+
+    color:
+        rgba(255,255,255,.8);
+
+    font-size: 14px;
+
+    transition: .2s;
+
+}
+
+
+.desktop-menu a:hover {
+
+    color: white;
+
+}
+
+
+.header-button {
+
+    padding:
+        11px 19px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 780px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(94,78,255,.2),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            180deg,
+            #080a38 0%,
+            #080b29 100%
+        );
+
+}
+
+
+.hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .15;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.04) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.04) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    padding:
+        130px 20px
+        80px;
+
+}
+
+
+.hero-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        8px 13px;
+
+    margin-bottom: 25px;
+
+    border:
+        1px solid
+        rgba(139,124,255,.35);
+
+    border-radius: 100px;
+
+    background:
+        rgba(139,124,255,.08);
+
+    color:
+        #b9b0ff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.live-dot {
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #7cffa5;
+
+    box-shadow:
+        0 0 10px #7cffa5;
+
+}
+
+
+.hero h1 {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    font-size:
+        clamp(
+            48px,
+            7vw,
+            84px
+        );
+
+    line-height: .98;
+
+    letter-spacing: -4px;
+
+    font-weight: 800;
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    color: #ffffff;
+
+}
+
+
+.hero-text {
+
+    max-width: 650px;
+
+    margin:
+        30px auto;
+
+    color:
+        rgba(255,255,255,.72);
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+}
+
+
+.primary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    padding:
+        17px 22px;
+
+    border-radius: 9px;
+
+    background:
+        #ffffff;
+
+    color: #080a26;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    transition: .2s;
+
+}
+
+
+.primary-button:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.primary-button span {
+
+    font-size: 18px;
+
+}
+
+
+.secondary-button {
+
+    padding:
+        16px 22px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    border-radius: 9px;
+
+    color:
+        rgba(255,255,255,.9);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+.hero-info {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 60px;
+
+    margin-top: 55px;
+
+}
+
+
+.hero-info div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.hero-info strong {
+
+    font-size: 20px;
+
+}
+
+
+.hero-info span {
+
+    color:
+        rgba(255,255,255,.5);
+
+    font-size: 11px;
+
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.sports,
+.content {
+
+    padding:
+        110px 0;
+
+    background: #090d2a;
+
+}
+
+
+.content {
+
+    background:
+        #070a20;
+
+}
+
+
+.section-heading {
+
+    margin-bottom: 55px;
+
+}
+
+
+.section-heading.center {
+
+    text-align: center;
+
+}
+
+
+.section-heading > span {
+
+    color:
+        #8174ff;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+}
+
+
+.section-heading h2 {
+
+    margin-top: 12px;
+
+    font-size:
+        clamp(
+            35px,
+            5vw,
+            55px
+        );
+
+    letter-spacing: -2px;
+
+    line-height: 1.05;
+
+}
+
+
+.section-heading em {
+
+    color:
+        #9187ff;
+
+    font-style: normal;
+
+}
+
+
+/* =========================
+   SPORTS
+========================= */
+
+.sports-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.sport-card {
+
+    min-height: 260px;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.015)
+        );
+
+    transition: .25s;
+
+}
+
+
+.sport-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(139,124,255,.5);
+
+}
+
+
+.sport-icon {
+
+    font-size: 45px;
+
+    margin-bottom: auto;
+
+}
+
+
+.sport-card h3 {
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.sport-card p {
+
+    color:
+        rgba(255,255,255,.5);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================
+   CONTENT CARDS
+========================= */
+
+.content-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.content-card {
+
+    position: relative;
+
+    padding: 28px 22px;
+
+    min-height: 260px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    border-radius: 15px;
+
+    background:
+        #0d1131;
+
+}
+
+
+.card-number {
+
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    color:
+        rgba(255,255,255,.15);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.card-icon {
+
+    font-size: 30px;
+
+    margin-bottom: 55px;
+
+}
+
+
+.content-card h3 {
+
+    margin-bottom: 12px;
+
+    font-size: 18px;
+
+}
+
+
+.content-card p {
+
+    color:
+        rgba(255,255,255,.48);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================
+   ANALYSIS
+========================= */
+
+.analysis {
+
+    padding:
+        100px 0;
+
+    background:
+        #090d2a;
+
+}
+
+
+.analysis-box {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 60px;
+
+    padding: 60px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #10154a,
+            #0b0e2d
+        );
+
+    border:
+        1px solid
+        rgba(139,124,255,.2);
+
+}
+
+
+.analysis-text > span {
+
+    color:
+        #958aff;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.analysis-text h2 {
+
+    margin:
+        20px 0;
+
+    font-size:
+        clamp(
+            35px,
+            4vw,
+            52px
+        );
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+}
+
+
+.analysis-text h2 em {
+
+    display: block;
+
+    color:
+        #9187ff;
+
+    font-style: normal;
+
+}
+
+
+.analysis-text p {
+
+    max-width: 450px;
+
+    color:
+        rgba(255,255,255,.55);
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+    margin-bottom: 28px;
+
+}
+
+
+.analysis-visual {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.score-box {
+
+    width: 100%;
+
+    padding: 35px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    text-align: center;
+
+}
+
+
+.score-box > span {
+
+    display: block;
+
+    color:
+        rgba(255,255,255,.4);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.score-box > strong {
+
+    display: block;
+
+    margin:
+        10px 0 30px;
+
+    color:
+        #7cffaa;
+
+    font-size: 12px;
+
+}
+
+
+.fake-score {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.fake-score div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    font-size: 35px;
+
+}
+
+
+.fake-score small {
+
+    color:
+        rgba(255,255,255,.5);
+
+    font-size: 11px;
+
+}
+
+
+.fake-score b {
+
+    font-size: 28px;
+
+}
+
+
+/* =========================
+   TELEGRAM
+========================= */
+
+.telegram-section {
+
+    padding:
+        100px 0;
+
+    background:
+        #070a20;
+
+}
+
+
+.telegram-box {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    padding:
+        70px 35px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(139,124,255,.2);
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(139,124,255,.12),
+            transparent 65%
+        );
+
+}
+
+
+.telegram-logo {
+
+    width: 70px;
+    height: 70px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin:
+        0 auto 25px;
+
+    border-radius: 50%;
+
+    background:
+        #8b7cff;
+
+    font-size: 30px;
+
+}
+
+
+.small-title {
+
+    color:
+        #8f83ff;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+
+.telegram-box h2 {
+
+    margin:
+        15px 0;
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            62px
+        );
+
+    letter-spacing: -3px;
+
+}
+
+
+.telegram-box h2 em {
+
+    color:
+        #8d82ff;
+
+    font-style: normal;
+
+}
+
+
+.telegram-box p {
+
+    max-width: 500px;
+
+    margin:
+        0 auto 30px;
+
+    color:
+        rgba(255,255,255,.55);
+
+    line-height: 1.7;
+
+    font-size: 14px;
+
+}
+
+
+.telegram-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    padding:
+        18px 28px;
+
+    border-radius: 9px;
+
+    background:
+        #ffffff;
+
+    color:
+        #080a20;
+
+    font-weight: 800;
+
+    font-size: 14px;
+
+}
+
+
+.telegram-note {
+
+    margin-top: 25px;
+
+    color:
+        rgba(255,255,255,.35);
+
+    font-size: 10px;
+
+}
+
+
+.telegram-note span {
+
+    margin:
+        0 8px;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding:
+        45px 0 100px;
+
+    text-align: center;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
+    background:
+        #050719;
+
+}
+
+
+.footer-logo {
+
+    margin-bottom: 12px;
+
+    font-weight: 800;
+
+}
+
+
+footer p {
+
+    color:
+        rgba(255,255,255,.35);
+
+    font-size: 10px;
+
+    margin-top: 7px;
+
+}
+
+
+/* =========================
+   MOBILE CTA
+========================= */
+
+.mobile-cta {
+
+    display: none;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 800px) {
+
+
+    .header-inner {
+
+        width:
+            calc(100% - 30px);
+
+    }
+
+
+    .desktop-menu {
+
+        display: none;
+
+    }
+
+
+    .hero {
+
+        min-height:
+            700px;
+
+    }
+
+
+    .hero-content {
+
+        padding:
+            130px 10px
+            70px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            47px;
+
+        letter-spacing:
+            -2.5px;
+
+    }
+
+
+    .hero-text {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .primary-button,
+    .secondary-button {
+
+        width: 100%;
+
+        max-width: 340px;
+
+    }
+
+
+    .hero-info {
+
+        gap: 25px;
+
+    }
+
+
+    .sports-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .content-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .analysis-box {
+
+        grid-template-columns:
+            1fr;
+
+        padding: 30px;
+
+    }
+
+
+    .mobile-cta {
+
+        display: block;
+
+        position: fixed;
+
+        z-index: 999;
+
+        bottom: 12px;
+
+        left: 12px;
+        right: 12px;
+
+    }
+
+
+    .mobile-cta a {
+
+        height: 55px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 25px;
+
+        border-radius: 10px;
+
+        background:
+            #ffffff;
+
+        color:
+            #080a20;
+
+        font-size: 14px;
+
+        font-weight: 800;
+
+        box-shadow:
+            0 10px 35px
+            rgba(0,0,0,.45);
+
+    }
+
+}
+
+
+@media(max-width: 500px) {
+
+
+    .container {
+
+        width:
+            calc(100% - 28px);
+
+    }
+
+
+    .header-button {
+
+        padding:
+            9px 12px;
+
+        font-size: 11px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            42px;
+
+    }
+
+
+    .hero-info {
+
+        gap:
+            15px;
+
+    }
+
+
+    .hero-info strong {
+
+        font-size:
+            17px;
+
+    }
+
+
+    .content-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .analysis-box {
+
+        padding:
+            25px 18px;
+
+    }
+
+
+    .fake-score div {
+
+        font-size:
+            27px;
+
+    }
+
+
+    .telegram-box {
+
+        padding:
+            55px 20px;
+
+    }
+
+
+}

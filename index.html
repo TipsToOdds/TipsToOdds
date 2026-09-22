@@ -3,119 +3,272 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>TipsToOdds</title>
-  <meta name="description" content="Sports news, match analysis, live updates and daily sports content from TipsToOdds.">
+
+  <meta name="description"
+        content="TipsToOdds - Sports news, match analysis, live updates and daily sports content.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
 <div class="site">
 
+  <!-- HEADER -->
   <header class="header">
+
     <div class="header-inner">
-      <a href="#" class="logo" aria-label="TipsToOdds">
+
+      <a href="#" class="logo">
         <span>TipsTo</span><strong>Odds</strong>
       </a>
 
-      <nav class="desktop-menu" aria-label="Main navigation">
+      <nav class="desktop-menu">
+
         <a href="#news" data-i18n="navNews">News</a>
-        <a href="#analysis" data-i18n="navAnalysis">Analysis</a>
-        <a href="#sports" data-i18n="navSports">Sports</a>
-        <a href="#telegram" data-i18n="navTelegram">Telegram</a>
+
+        <a href="#analysis" data-i18n="navAnalysis">
+          Analysis
+        </a>
+
+        <a href="#sports" data-i18n="navSports">
+          Sports
+        </a>
+
+        <a href="#telegram" data-i18n="navTelegram">
+          Telegram
+        </a>
+
       </nav>
 
-      <a href="https://t.me/TipsToOdds" target="_blank" rel="noopener noreferrer"
-         class="header-button" data-i18n="telegram">Telegram</a>
+
+      <!-- LANGUAGE SELECTOR -->
+      <div class="header-actions">
+
+        <div class="language-selector">
+
+          <button
+            class="language-button"
+            id="languageButton"
+            type="button">
+
+            <span>🌐</span>
+            <span id="currentLanguage">EN</span>
+            <span class="language-arrow">⌄</span>
+
+          </button>
+
+
+          <div
+            class="language-menu"
+            id="languageMenu">
+
+            <button
+              type="button"
+              data-language="en">
+
+              🇬🇧 English
+            </button>
+
+            <button
+              type="button"
+              data-language="fr">
+
+              🇫🇷 Français
+            </button>
+
+            <button
+              type="button"
+              data-language="ar">
+
+              🇸🇦 العربية
+            </button>
+
+            <button
+              type="button"
+              data-language="pt">
+
+              🇵🇹 Português
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <a
+          href="https://t.me/TipsToOdds"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="header-button"
+          data-i18n="telegram">
+
+          Telegram
+
+        </a>
+
+      </div>
+
     </div>
+
   </header>
 
+
+  <!-- HERO -->
   <main>
 
     <section class="hero">
+
       <div class="hero-background"></div>
 
       <div class="hero-content">
 
         <div class="hero-badge">
+
           <span class="live-dot"></span>
-          <span data-i18n="heroBadge">LATEST SPORTS UPDATES</span>
+
+          <span data-i18n="heroBadge">
+            LATEST SPORTS UPDATES
+          </span>
+
         </div>
 
+
         <h1>
-          <span data-i18n="heroTitle1">Stay ahead of</span>
-          <span data-i18n="heroTitle2">the sports world</span>
+
+          <span data-i18n="heroTitle1">
+            Stay ahead of
+          </span>
+
+          <span data-i18n="heroTitle2">
+            the sports world
+          </span>
+
         </h1>
 
-        <p class="hero-text" data-i18n="heroText">
-          Sports news, match analysis, live updates and important developments in one place.
+
+        <p class="hero-text"
+           data-i18n="heroText">
+
+          Sports news, match analysis, live updates and important
+          developments in one place.
+
         </p>
+
 
         <div class="hero-buttons">
 
-          <a href="https://t.me/TipsToOdds"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="primary-button">
+          <a
+            href="https://t.me/TipsToOdds"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="primary-button">
 
-            <span data-i18n="joinTelegram">Join Telegram</span>
+            <span data-i18n="joinTelegram">
+              Join Telegram
+            </span>
+
             <span>→</span>
 
           </a>
 
-          <a href="#news"
-             class="secondary-button"
-             data-i18n="explore">
+
+          <a
+            href="#news"
+            class="secondary-button"
+            data-i18n="explore">
+
             Explore More
+
           </a>
 
         </div>
 
+
         <div class="hero-info">
 
           <div>
+
             <strong>50K+</strong>
-            <span data-i18n="followers">Followers</span>
+
+            <span data-i18n="followers">
+              Followers
+            </span>
+
           </div>
 
+
           <div>
+
             <strong>24/7</strong>
-            <span data-i18n="updated">Updates</span>
+
+            <span data-i18n="updated">
+              Updates
+            </span>
+
           </div>
 
+
           <div>
-            <strong data-i18n="daily">Daily</strong>
-            <span data-i18n="content">New Content</span>
+
+            <strong data-i18n="daily">
+              Daily
+            </strong>
+
+            <span data-i18n="content">
+              New Content
+            </span>
+
           </div>
 
         </div>
 
       </div>
+
     </section>
 
 
+    <!-- SPORTS -->
     <section class="sports" id="sports">
 
       <div class="container">
 
         <div class="section-heading">
 
-          <span data-i18n="sportsLabel">SPORTS</span>
+          <span data-i18n="sportsLabel">
+            SPORTS
+          </span>
 
           <h2>
-            <span data-i18n="sportsTitle1">Follow the sports</span>
-            <em data-i18n="sportsTitle2">you care about</em>
+
+            <span data-i18n="sportsTitle1">
+              Follow the sports
+            </span>
+
+            <em data-i18n="sportsTitle2">
+              you care about
+            </em>
+
           </h2>
 
         </div>
+
 
         <div class="sports-grid">
 
           <div class="sport-card">
 
-            <div class="sport-icon">⚽</div>
+            <div class="sport-icon">
+              ⚽
+            </div>
 
             <h3 data-i18n="football">
               Football
@@ -130,7 +283,9 @@
 
           <div class="sport-card">
 
-            <div class="sport-icon">🏀</div>
+            <div class="sport-icon">
+              🏀
+            </div>
 
             <h3 data-i18n="basketball">
               Basketball
@@ -145,7 +300,9 @@
 
           <div class="sport-card">
 
-            <div class="sport-icon">🎾</div>
+            <div class="sport-icon">
+              🎾
+            </div>
 
             <h3 data-i18n="tennis">
               Tennis
@@ -164,6 +321,7 @@
     </section>
 
 
+    <!-- NEWS -->
     <section class="content" id="news">
 
       <div class="container">
@@ -175,6 +333,7 @@
           </span>
 
           <h2>
+
             <span data-i18n="newsTitle1">
               Follow sports
             </span>
@@ -182,6 +341,7 @@
             <em data-i18n="newsTitle2">
               in one place
             </em>
+
           </h2>
 
         </div>
@@ -279,6 +439,7 @@
     </section>
 
 
+    <!-- ANALYSIS -->
     <section class="analysis" id="analysis">
 
       <div class="container">
@@ -292,6 +453,7 @@
             </span>
 
             <h2>
+
               <span data-i18n="analysisTitle1">
                 Follow today's
               </span>
@@ -299,16 +461,19 @@
               <em data-i18n="analysisTitle2">
                 important matches
               </em>
+
             </h2>
 
             <p data-i18n="analysisText">
               Team form, match schedules and important details from the sports world.
             </p>
 
-            <a href="https://t.me/TipsToOdds"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="primary-button">
+
+            <a
+              href="https://t.me/TipsToOdds"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="primary-button">
 
               <span data-i18n="telegramChannel">
                 Telegram Channel
@@ -333,24 +498,33 @@
                 LIVE
               </strong>
 
+
               <div class="fake-score">
 
                 <div>
+
                   <span>⚽</span>
+
                   <small data-i18n="teamA">
                     Team A
                   </small>
+
                 </div>
+
 
                 <b>
                   2 : 1
                 </b>
 
+
                 <div>
+
                   <span>⚽</span>
+
                   <small data-i18n="teamB">
                     Team B
                   </small>
+
                 </div>
 
               </div>
@@ -366,6 +540,7 @@
     </section>
 
 
+    <!-- TELEGRAM -->
     <section class="telegram-section" id="telegram">
 
       <div class="container">
@@ -376,9 +551,13 @@
             ➤
           </div>
 
-          <span class="small-title" data-i18n="freeJoin">
+          <span class="small-title"
+                data-i18n="freeJoin">
+
             JOIN FOR FREE
+
           </span>
+
 
           <h2>
 
@@ -392,14 +571,20 @@
 
           </h2>
 
+
           <p data-i18n="telegramText">
-            Join our Telegram channel for daily sports news, analysis and important updates.
+
+            Join our Telegram channel for daily sports news,
+            analysis and important updates.
+
           </p>
 
-          <a href="https://t.me/TipsToOdds"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="telegram-button">
+
+          <a
+            href="https://t.me/TipsToOdds"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="telegram-button">
 
             <span data-i18n="joinTelegram">
               Join Telegram
@@ -448,6 +633,7 @@
   </main>
 
 
+  <!-- FOOTER -->
   <footer>
 
     <div class="container">
@@ -460,8 +646,11 @@
         © 2026 TipsToOdds
       </p>
 
-      <p class="age" data-i18n="disclaimer">
+      <p class="age"
+         data-i18n="disclaimer">
+
         18+ | For informational purposes only.
+
       </p>
 
     </div>
@@ -469,11 +658,13 @@
   </footer>
 
 
+  <!-- MOBILE TELEGRAM -->
   <div class="mobile-cta">
 
-    <a href="https://t.me/TipsToOdds"
-       target="_blank"
-       rel="noopener noreferrer">
+    <a
+      href="https://t.me/TipsToOdds"
+      target="_blank"
+      rel="noopener noreferrer">
 
       <span data-i18n="joinTelegram">
         Join Telegram
@@ -485,8 +676,8 @@
 
   </div>
 
-
 </div>
+
 
 <script src="script.js"></script>
 
